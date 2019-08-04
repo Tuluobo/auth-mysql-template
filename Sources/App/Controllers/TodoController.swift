@@ -44,6 +44,14 @@ final class TodoController {
     }
 }
 
+extension TodoController: RouteCollection {
+    func boot(router: Router) throws {
+        router.get("todos", use: index)
+        router.post("todos", use: create)
+        router.delete("todos", Todo.parameter, use: delete)
+    }
+}
+
 // MARK: Content
 
 /// Represents data required to create a new todo.

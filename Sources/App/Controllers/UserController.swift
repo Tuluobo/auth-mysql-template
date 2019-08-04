@@ -37,6 +37,15 @@ final class UserController {
     }
 }
 
+extension UserController: RouteCollection {
+    func boot(router: Router) throws {
+        router.post("users", use: create)
+        // basic / password auth protected routes
+        let basic = router.grouped(User.basicAuthMiddleware(using: BCryptDigest()))
+        basic.post("login", use: login)
+    }
+}
+
 // MARK: Content
 
 /// Data required to create a user.
