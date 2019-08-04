@@ -7,7 +7,7 @@ let package = Package(
         // 💧 A server-side Swift web framework.
         .package(url: "https://github.com/vapor/vapor.git", from: "3.0.0"),
         
-        // 🔵 Swift ORM (queries, models, relations, etc) built on rf 3.
+        // 🔵 Swift ORM (queries, models, relations, etc) built on MySQL 3.
         .package(url: "https://github.com/vapor/fluent-mysql.git", from: "3.0.0"),
         
         // 👤 Authentication and Authorization layer for Fluent.
